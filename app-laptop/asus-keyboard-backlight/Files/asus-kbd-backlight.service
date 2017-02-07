@@ -1,0 +1,11 @@
+[Unit]
+Description=Asus Keyboard Backlight
+Wants=systemd-backlight@leds:asus::kbd_backlight.service
+After=systemd-backlight@leds:asus::kbd_backlight.service
+[Service]
+Type=oneshot
+
+RemainAfterExit=yes
+ExecStart=/bin/chmod 666 /sys/class/leds/asus::kbd_backlight/brightness
+[Install]
+WantedBy=multi-user.target /usr/lib/systemd/system/asus-kbd-backlight.service" > /usr/lib/systemd/system/asus-kbd-backlight.service
